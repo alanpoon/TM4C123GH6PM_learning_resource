@@ -56,14 +56,15 @@ uint8_t BSP_SW1(void) {
     uint32_t sw1;
 
     __disable_irq();
-    sw1 = GPIOF_AHB->DATA_Bits[BTN_SW1];
+    sw1 = GPIOF_AHB->DATA_Bits[BTN_SW1]; // read the state of the switch
     __enable_irq();
 
     return (sw1 != 0U) ? 1U : 0U;
 }
 
 void BSP_delay(uint32_t ticks) {
-    uint32_t start = BSP_tickCtr();
+    uint32_t start = BSP_tickCtr(); // get the current tick count
+    // wait until the specified number of ticks has elapsed
     while ((BSP_tickCtr() - start) < ticks) {
     }
 }

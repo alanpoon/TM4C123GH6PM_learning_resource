@@ -20,7 +20,7 @@ typedef struct {
 } Window;
 
 typedef struct {
-     Point corners[3];
+    Point corners[3];
 } Triangle;
 
 Window w, w2;

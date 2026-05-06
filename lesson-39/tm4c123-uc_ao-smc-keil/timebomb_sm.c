@@ -68,7 +68,7 @@ static inline void TimeBomb_armTE(TimeBomb * const me,
 
 
 
-#include "timebomb_sm.h"
+#include ".\timebomb_sm.h"
 
 #define getOwner(fsm) (fsm)->_owner
 

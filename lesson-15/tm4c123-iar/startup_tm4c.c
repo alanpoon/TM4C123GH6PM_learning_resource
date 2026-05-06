@@ -7,9 +7,9 @@ void Unused_Handler(void);
 
 
 int const __vector_table[] @ ".intvec" = {
-    (int)&CSTACK$$Limit,
-    (int)&__iar_program_start,
-    (int)&NMI_Handler,
+    (int)&CSTACK$$Limit,           // initial stack pointer
+    (int)&__iar_program_start,     /* Reset Handler */
+    (int)&NMI_Handler,             // NMI Handler
     (int)&HardFault_Handler,
     (int)&MemManage_Handler,
     (int)&BusFault_Handler,

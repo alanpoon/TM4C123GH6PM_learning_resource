@@ -2,6 +2,7 @@
 #include "uc_ao.h"  /* uC/AO API */
 #include "bsp.h"
 #include <stdbool.h>
+#include "ucos_ii.h"  /* uC/OS-II API */
 
 Q_DEFINE_THIS_MODULE("main") /* this module name for Q_ASSERT() */
 
@@ -123,6 +124,14 @@ void TimeBomb_ctor(TimeBomb * const me) {
     TimeEvent_ctor(&me->te, TIMEOUT_SIG, &me->super);
     me->state = WAIT4BUTTON_STATE;
 }
+
+void App_TimeTickHook(void) {}
+void App_TaskCreateHook(OS_TCB *ptcb) {}
+void App_TaskDelHook(OS_TCB *ptcb) {}
+void App_TaskReturnHook(OS_TCB *ptcb) {}
+void App_TaskIdleHook(void) {}
+void App_TaskStatHook(void) {}
+void App_TCBInitHook(OS_TCB *ptcb) {}
 
 OS_STK stack_timeBomb[100]; /* task stack */
 static Event *timeBomb_queue[10];

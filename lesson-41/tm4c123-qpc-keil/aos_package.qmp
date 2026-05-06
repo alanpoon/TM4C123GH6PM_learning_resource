@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--${AOs}-->
-<package name="AOs" stereotype="0x02">
+<package name="AOs" stereotype="0x02" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.state-machine.com/qm/qm7.xsd">
  <!--${AOs::TimeBomb}-->
  <class name="TimeBomb" superclass="qpc::QActive">
   <!--${AOs::TimeBomb::te}-->
@@ -31,8 +31,8 @@ QTimeEvt_ctorX(&amp;me-&gt;te, &amp;me-&gt;super, TIMEOUT_SIG, 0U);</code>
      </tran_glyph>
     </tran>
     <state_glyph node="44,6,18,10">
-     <entry box="1,2,17,3"/>
-     <exit box="1,5,17,3"/>
+     <entry box="0,3,17,3"/>
+     <exit box="0,6,17,3"/>
     </state_glyph>
    </state>
    <!--${AOs::TimeBomb::SM::armed}-->
@@ -64,8 +64,8 @@ BSP_ledBlueOff();</exit>
       </tran_glyph>
      </tran>
      <state_glyph node="4,12,26,20">
-      <entry box="1,2,17,2"/>
-      <exit box="1,4,19,2"/>
+      <entry box="0,3,17,2"/>
+      <exit box="0,5,19,2"/>
      </state_glyph>
     </state>
     <!--${AOs::TimeBomb::SM::armed::blink}-->
@@ -80,8 +80,8 @@ QTimeEvt_armX(&amp;me-&gt;te, BSP_TICKS_PER_SEC/2, 0U);</entry>
       </tran_glyph>
      </tran>
      <state_glyph node="4,34,26,16">
-      <entry box="1,2,25,3"/>
-      <exit box="1,5,24,2"/>
+      <entry box="0,3,25,3"/>
+      <exit box="0,6,24,2"/>
      </state_glyph>
     </state>
     <!--${AOs::TimeBomb::SM::armed::pause}-->
@@ -109,7 +109,7 @@ QTimeEvt_armX(&amp;me-&gt;te, BSP_TICKS_PER_SEC/2, 0U);</entry>
       </tran_glyph>
      </tran>
      <state_glyph node="4,52,26,14">
-      <entry box="1,2,21,3"/>
+      <entry box="0,3,21,3"/>
      </state_glyph>
     </state>
     <!--${AOs::TimeBomb::SM::armed::boom}-->
@@ -118,7 +118,7 @@ QTimeEvt_armX(&amp;me-&gt;te, BSP_TICKS_PER_SEC/2, 0U);</entry>
 BSP_ledGreenOn();
 BSP_ledBlueOn();</entry>
      <state_glyph node="4,68,26,10">
-      <entry box="1,2,17,3"/>
+      <entry box="0,3,17,3"/>
      </state_glyph>
     </state>
     <state_glyph node="2,6,40,74">
